@@ -1,0 +1,21 @@
+{
+  "name": "oreos-kahoot-bot",
+  "version": "0.1.0",
+  "description": "Oreos's Kahoot Bot",
+  "main": "server.js",
+  "scripts": {
+    "start": "sh start.sh"
+  },
+  "dependencies": {
+    "kahoot.js-latest": "^1.0.7"
+  },
+  "engines": {
+    "node": "14.x",
+    "python": "3.11.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "kahoot",
+    "kahoot cheats"
+  ]
+}
