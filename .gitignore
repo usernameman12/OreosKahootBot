@@ -12,6 +12,8 @@ dist
 .yarn
 local-storage/
 package.json.default
-themes/default
-particles/default
+themes/
+particles/
+sidebar/
+game-cards/
 ```
