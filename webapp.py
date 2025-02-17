@@ -34,16 +34,16 @@ game_cards = [
 
 # Themes
 themes = [
-    {"name": "Light", "link": "/light"},
-    {"name": "Dark", "link": "/dark"},
-    {"name": "Blue", "link": "/blue"},
+    {"name": "Light", "link": "/light", "css": "light.css"},
+    {"name": "Dark", "link": "/dark", "css": "dark.css"},
+    {"name": "Blue", "link": "/blue", "css": "blue.css"},
 ]
 
 # Particles
 particles = [
-    {"name": "Snow", "link": "/snow"},
-    {"name": "Rain", "link": "/rain"},
-    {"name": "Fire", "link": "/fire"},
+    {"name": "Snow", "link": "/snow", "js": "snow.js"},
+    {"name": "Rain", "link": "/rain", "js": "rain.js"},
+    {"name": "Fire", "link": "/fire", "js": "fire.js"},
 ]
 
 @app.route('/')
@@ -74,6 +74,24 @@ def about():
 @app.route('/contact')
 def contact():
     return render_template('contact.html', sidebar_links=sidebar_links)
+
+
+@app.route('/themes/<theme_name>')
+def theme(theme_name):
+    theme = next((theme for theme in themes if theme["name"] == theme_name), None)
+    if not theme:
+        return redirect(url_for('index'))
+
+    return render_template('index.html', sidebar_links=sidebar_links, game_cards=game_cards, themes=themes, particles=particles, theme=theme["name"], particle=random.choice(particles)["name"], theme_css=theme["css"])
+
+
+@app.route('/particles/<particle_name>')
+def particle(particle_name):
+    particle = next((particle for particle in particles if particle["name"] == particle_name), None)
+    if not particle:
+        return redirect(url_for('index'))
+
+    return render_template('index.html', sidebar_links=sidebar_links, game_cards=game_cards, themes=themes, particles=particles, theme=random.choice(themes)["name"], particle=particle["name"], particle_js=particle["js"])
 
 
 def ping_self():
