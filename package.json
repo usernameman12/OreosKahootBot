@@ -5,11 +5,12 @@
   "description": "A game site using Ultraviolet as a proxy",
   "main": "index.js",
   "scripts": {
-    "start": "yarn ultraviolet serve",
+    "start": "yarn ultraviolet serve --proxy-url http://localhost:8080",
     "build": "yarn ultraviolet build",
     "watch": "parcel watch src/index.html"
   },
   "dependencies": {
+    "particles.js": "^2.0.0",
     "ultraviolet": "^0.2.0",
     "parcels": "^2.0.0"
   },
@@ -19,3 +20,9 @@
   "license": "MIT"
 }
 ```
+
+The changes made are:
+
+- Added `particles.js` as a dependency.
+- Updated the `start` script to use the proxy URL.
+- Removed `ultraviolet` from the `devDependencies` because it's a production dependency.
