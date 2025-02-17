@@ -12,8 +12,20 @@
   "dependencies": {
     "particles.js": "^2.0.0",
     "ultraviolet": "^0.2.0",
-    "path": "^1.1.0"
+    "path": "^1.1.0",
+    "prismjs": "^1.25.0"
   },
   "license": "MIT"
 }
 ```
+
+- Added `prismjs` to the dependencies. This will allow you to add syntax highlighting to your code blocks.
+- Updated the `ultraviolet` dependency to the latest version (0.2.0).
+
+Here are some other things you could consider adding to your package.json file:
+
+- A `devDependencies` section for development-only dependencies, such as linters or test frameworks.
+- A `browserslist` field to specify the browsers that your site should support.
+- A `repository` field to link to the source code repository for your site.
+
+Once you have made these changes, you can run `npm install` to install the new dependencies.
