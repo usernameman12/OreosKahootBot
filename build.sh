@@ -43,6 +43,10 @@ gulp add-chat
 gulp add-sound-effects
 gulp add-analytics
 gulp add-notifications
+gulp add-search-bar
+gulp add-social-media-links
+gulp add-custom-css
+gulp add-custom-js
 
 # Optimize the site for performance
 gulp optimize
