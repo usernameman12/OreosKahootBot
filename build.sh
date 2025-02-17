@@ -42,10 +42,10 @@ gulp add-leaderboard
 gulp add-chat
 gulp add-sound-effects
 gulp add-analytics
-gulp add-leaderboard
-gulp add-sound-effects
-gulp add-analytics
 gulp add-notifications
+
+# Optimize the site for performance
+gulp optimize
 
 # Deploy the site to a web server
 gulp deploy
