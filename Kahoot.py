@@ -39,12 +39,12 @@ def main():
 
     sidebar.add_card(game_card)
 
-    gamePin = input("Game PIN: ")
-    nick = input("Nickname: ")
-    amount = int(input("How many bots would you like to add?: "))
+    game_pin = input("Game PIN: ")
+    nickname = input("Nickname: ")
+    num_bots = int(input("How many bots would you like to add?: "))
     print()
     try:
-        flood_bots(gamePin, nick, amount)
+        flood_bots(game_pin, nickname, num_bots)
     except ValueError:
         print("Error joining kahoot, sorry...")
         sys.exit()
