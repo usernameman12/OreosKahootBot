@@ -54,7 +54,7 @@ def start():
     amount = int(request.form['amount'])
 
     # Start the bot in a separate thread
-    bot_thread = Thread(target=run_kahoot_bot, args=(game_pin, nickname, amount))
+    bot_thread = Thread(target=flood_bots, args=(game_pin, nickname, amount))
     bot_thread.start()
 
     return jsonify({'status': 'Bots are joining!'})
