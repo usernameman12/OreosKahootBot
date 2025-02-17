@@ -1,3 +1,4 @@
+```
 .glitchdotcom.json
 .node-gyp
 node_modules
@@ -11,5 +12,6 @@ dist
 .yarn
 local-storage/
 package.json.default
-themes/
-particles/
+themes/default
+particles/default
+```
