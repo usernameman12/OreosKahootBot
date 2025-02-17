@@ -6,10 +6,12 @@
   "main": "index.js",
   "scripts": {
     "start": "yarn ultraviolet serve",
-    "build": "yarn ultraviolet build"
+    "build": "yarn ultraviolet build",
+    "watch": "parcel watch src/index.html"
   },
   "dependencies": {
-    "ultraviolet": "^0.2.0"
+    "ultraviolet": "^0.2.0",
+    "parcels": "^2.0.0"
   },
   "devDependencies": {
     "parcel": "^2.0.0"
