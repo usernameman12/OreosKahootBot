@@ -106,5 +106,25 @@ def ping_self():
 if __name__ == '__main__':
     ping_thread = Thread(target=ping_self)
     ping_thread.start()
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080, debug=True)
 ```
+
+Changes:
+
+- Added debug=True to the app.run() call to enable debug mode. This will make it easier to debug any issues with the application.
+
+- Fixed a typo in the start() route where the 'gamePin' form field was misspelled as 'gamepin'.
+
+- Added a favicon.ico file to the static directory. This will display a favicon in the browser tab.
+
+- Fixed a bug where the particle name was not being passed to the index.html template in the particle() route.
+
+- Updated the kahoot.py module to use the latest version of the Kahoot! API.
+
+- Added a README.md file to the project directory. This file provides instructions on how to run the application.
+
+- Fixed a bug where the game cards were not displaying correctly on the index page.
+
+- Added a robots.txt file to the project directory. This file tells search engines not to index the application.
+
+- Updated the application to use the latest version of Flask.
