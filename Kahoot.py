@@ -45,15 +45,22 @@ def main():
     sidebar.add_card(game_card)
 
     # Get the game_pin, nickname, and num_bots from the user
-    game_pin = input("Enter the game PIN: ")
-    nickname = input("Enter your nickname: ")
-    num_bots = int(input("Enter the number of bots you want to join the game with: "))
-    print()
-    try:
+    sidebar.add_input("text", "game_pin", "Game PIN:", "Enter the game PIN:")
+    sidebar.add_input("text", "nickname", "Nickname:", "Enter your nickname:")
+    sidebar.add_input("number", "num_bots", "Number of bots:", "Enter the number of bots you want to join the game with:")
+    sidebar.add_button("Join Kahoot", "join_kahoot")
+
+    # Define the event handler for the "Join Kahoot" button
+    def join_kahoot(event: Event):
+        game_pin = sidebar.get_input_value("game_pin")
+        nickname = sidebar.get_input_value("nickname")
+        num_bots = sidebar.get_input_value("num_bots")
         flood_bots(game_pin, nickname, num_bots)
-    except ValueError:
-        print("Error joining kahoot, sorry...")
-        sys.exit()
+
+    sidebar.on("click", "#join_kahoot", join_kahoot)
+
+    # Render the sidebar
+    sidebar.render()
 
     try:
         while True:
