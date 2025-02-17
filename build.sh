@@ -18,7 +18,22 @@ npm install --save-dev gulp-imagemin
 npm install --save-dev gulp-rename
 npm install --save-dev gulp-concat
 npm install --save-dev gulp-sourcemaps
+npm install --save-dev gulp-filter
+npm install --save-dev gulp-concat-css
+npm install --save-dev gulp-replace
 
 # Build the game site
 gulp build
+
+# Create a sidebar
+gulp create-sidebar
+
+# Create game cards
+gulp create-game-cards
+
+# Add themes
+gulp add-themes
+
+# Add particles
+gulp add-particles
 ```
