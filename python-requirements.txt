@@ -24,4 +24,9 @@ pyglet==1.5.16
 
 # Pygame is not recommended for web development, but it is included for completeness
 pygame==2.1.2
+
+# Additional packages for game site
+markdown==3.4.1
+Flask-SQLAlchemy==3.0.2
+psycopg2-binary==2.9.3
 ```
