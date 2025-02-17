@@ -7,17 +7,15 @@
   "scripts": {
     "start": "ultraviolet serve --proxy-url http://localhost:8080",
     "build": "ultraviolet build",
-    "watch": "parcel watch src/index.html"
+    "watch": "ultraviolet dev"
   },
   "dependencies": {
     "particles.js": "^2.0.0",
     "ultraviolet": "^0.2.0"
   },
-  "devDependencies": {
-    "parcel": "^2.0.0"
-  },
   "license": "MIT"
 }
 ```
 
-- Removed the unnecessary `parcels` dependency.
+- Removed the unnecessary `parcel` dependency.
+- Replaced `parcel watch src/index.html` with `ultraviolet dev` which is a more appropriate script for development purposes with Ultraviolet.
