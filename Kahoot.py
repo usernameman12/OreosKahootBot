@@ -1,5 +1,7 @@
+```python
 from javascript import require
 import sys
+from ultraviolet import Sidebar, GameCard, Theme, Particle
 
 Kahoot = require("kahoot.js-latest")
 
@@ -17,6 +19,26 @@ def flood_bots(game_pin: str, nickname: str, num_bots: int):
 
 
 def main():
+    sidebar = Sidebar()
+    game_card = GameCard()
+
+    theme = Theme()
+    theme.primary_color = "skyblue"
+    theme.secondary_color = "white"
+
+    particle = Particle()
+    particle.type = "snow"
+    particle.color = "white"
+    particle.size = 10
+
+    game_card.add_theme(theme)
+    game_card.add_particle(particle)
+
+    game_card.set_title("Kahoot Flooder")
+    game_card.set_description("Flood a Kahoot game with bots.")
+
+    sidebar.add_card(game_card)
+
     gamePin = input("Game PIN: ")
     nick = input("Nickname: ")
     amount = int(input("How many bots would you like to add?: "))
@@ -37,3 +59,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
