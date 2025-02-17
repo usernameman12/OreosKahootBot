@@ -7,3 +7,4 @@ debugger/scratchpad.js
 .cache
 .package-lock.json
 .yarn
+dist
