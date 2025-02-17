@@ -17,4 +17,9 @@ particle_engine==1.0.0
 
 # This is a collection of themes
 themes==0.0.1
+
+# Additional packages for game development
+pygame==2.1.2
+pyglet==1.5.16
+panda3d==1.10.4
 ```
