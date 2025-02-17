@@ -19,6 +19,8 @@ sidebar_links = [
     {"name": "Games", "link": "/games"},
     {"name": "Themes", "link": "/themes"},
     {"name": "Particles", "link": "/particles"},
+    {"name": "About", "link": "/about"},
+    {"name": "Contact", "link": "/contact"},
 ]
 
 # Game cards
@@ -58,6 +60,16 @@ def start():
     bot_thread.start()
 
     return jsonify({'status': 'Bots are joining!'})
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html', sidebar_links=sidebar_links)
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', sidebar_links=sidebar_links)
 
 
 def ping_self():
