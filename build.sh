@@ -42,7 +42,10 @@ gulp add-leaderboard
 gulp add-chat
 gulp add-sound-effects
 gulp add-analytics
-gulp add-particles
+gulp add-leaderboard
+gulp add-sound-effects
+gulp add-analytics
+gulp add-notifications
 
 # Deploy the site to a web server
 gulp deploy
