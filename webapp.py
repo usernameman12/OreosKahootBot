@@ -5,6 +5,7 @@ from kahoot import flood_bots
 import requests
 import time
 import ultraviolet
+import random
 
 app = Flask(__name__)
 app.config["APPLICATION_ROOT"] = "/game_site"
@@ -19,6 +20,7 @@ sidebar_links = [
     {"name": "Games", "link": "/games"},
     {"name": "Themes", "link": "/themes"},
     {"name": "Particles", "link": "/particles"},
+    {"name": "Settings", "link": "/settings"},
     {"name": "About", "link": "/about"},
     {"name": "Contact", "link": "/contact"},
 ]
@@ -46,7 +48,9 @@ particles = [
 
 @app.route('/')
 def index():
-    return render_template('index.html', sidebar_links=sidebar_links, game_cards=game_cards, themes=themes, particles=particles)
+    theme = random.choice(themes)["name"]
+    particle = random.choice(particles)["name"]
+    return render_template('index.html', sidebar_links=sidebar_links, game_cards=game_cards, themes=themes, particles=particles, theme=theme, particle=particle)
 
 
 @app.route('/start', methods=['POST'])
@@ -74,7 +78,10 @@ def contact():
 
 def ping_self():
     while True:
-        requests.get("https://rattle-icy-limit.glitch.me/")
+        try:
+            requests.get("https://rattle-icy-limit.glitch.me/")
+        except:
+            pass
         time.sleep(5)
 
 
