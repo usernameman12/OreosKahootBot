@@ -1,21 +1,19 @@
+```json
 {
-  "name": "oreos-kahoot-bot",
+  "name": "game-site",
   "version": "0.1.0",
-  "description": "Oreos's Kahoot Bot",
-  "main": "server.js",
+  "description": "A game site using Ultraviolet as a proxy",
+  "main": "index.js",
   "scripts": {
-    "start": "sh start.sh"
+    "start": "yarn ultraviolet serve",
+    "build": "yarn ultraviolet build"
   },
   "dependencies": {
-    "kahoot.js-latest": "^1.0.7"
+    "ultraviolet": "^0.2.0"
   },
-  "engines": {
-    "node": "14.x",
-    "python": "3.11.x"
+  "devDependencies": {
+    "parcel": "^2.0.0"
   },
-  "license": "MIT",
-  "keywords": [
-    "kahoot",
-    "kahoot cheats"
-  ]
+  "license": "MIT"
 }
+```
