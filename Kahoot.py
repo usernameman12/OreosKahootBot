@@ -4,7 +4,7 @@ import sys
 from ultraviolet import Sidebar, GameCard, Theme, Particle
 
 Kahoot = require("kahoot.js-latest")
-
+import platform
 
 def join_kahoot(game_pin: str, nickname: str):
     print(f"Creating client with name: {nickname}")
@@ -19,6 +19,11 @@ def flood_bots(game_pin: str, nickname: str, num_bots: int):
 
 
 def main():
+    version = platform.python_version()
+    if version[0] != '3':
+        print("This script requires Python 3 to run. Please update your Python version.")
+        sys.exit()
+
     sidebar = Sidebar()
     game_card = GameCard()
 
