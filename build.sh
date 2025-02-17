@@ -36,4 +36,10 @@ gulp add-themes
 
 # Add particles
 gulp add-particles
+
+# Add additional features
+gulp add-leaderboard
+gulp add-chat
+gulp add-sound-effects
+gulp add-analytics
 ```
