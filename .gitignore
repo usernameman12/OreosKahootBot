@@ -8,3 +8,10 @@ debugger/scratchpad.js
 .package-lock.json
 .yarn
 dist
+.vscode
+.env
+.DS_Store
+local-storage/
+package.json.default
+themes/
+particles/
