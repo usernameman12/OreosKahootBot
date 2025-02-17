@@ -11,11 +11,9 @@
   },
   "dependencies": {
     "particles.js": "^2.0.0",
-    "ultraviolet": "^0.2.0"
+    "ultraviolet": "^0.2.0",
+    "path": "^1.1.0"
   },
   "license": "MIT"
 }
 ```
-
-- Removed the unnecessary `parcel` dependency.
-- Replaced `parcel watch src/index.html` with `ultraviolet dev` which is a more appropriate script for development purposes with Ultraviolet.
