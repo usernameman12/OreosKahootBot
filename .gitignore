@@ -1,3 +1,9 @@
 .glitchdotcom.json
 .node-gyp
 node_modules
+build
+public
+debugger/scratchpad.js
+.cache
+.package-lock.json
+.yarn
