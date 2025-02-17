@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oreo's Kahoot Bot</title>
+  <link rel="stylesheet" href="https://unpkg.com/ultraviolet-ui@3.0.0/css/uv.min.css" />
   <style>
+    :root {
+      --uv-background-color: #76c7c0;
+      --uv-primary-color: #006f6a;
+      --uv-accent-color: #006f6a;
+    }
+
     /* Global Styles */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(180deg, #76c7c0, #a1e6c0);
       color: #333;
       overflow: hidden;
-      position: relative;
     }
 
     /* Header */
     header {
-      background-color: #006f6a;
+      background-color: var(--uv-primary-color);
       padding: 20px;
       text-align: center;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       position: relative;
       z-index: 3;
     }
-    
+
     header h1 {
       color: #fff;
       font-size: 2em;
@@ -33,7 +39,7 @@
       /* Initially hide the text; JS will type it */
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid rgba(255,255,255,0.75);
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
     }
 
     /* Sidebar */
@@ -114,7 +120,7 @@
     button {
       width: 100%;
       padding: 10px;
-      background-color: #006f6a;
+      background-color: var(--uv-primary-color);
       color: #fff;
       border: none;
       border-radius: 12px;
@@ -150,6 +156,7 @@
       overflow: hidden;
       z-index: 2;
     }
+
     .wave {
       position: absolute;
       bottom: 0;
@@ -159,34 +166,45 @@
       background-size: 50% 100%;
       animation: moveWave 10s linear infinite;
     }
+
     .wave.wave1 {
       background-image: url("data:image/svg+xml,%3Csvg width='1200' height='200' viewBox='0 0 1200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,100 C300,200 900,0 1200,100 L1200,200 L0,200 Z' fill='%23ffffff'/%3E%3C/svg%3E");
       opacity: 0.5;
       animation-duration: 10s;
     }
+
     .wave.wave2 {
       background-image: url("data:image/svg+xml,%3Csvg width='1200' height='200' viewBox='0 0 1200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,120 C400,40 800,180 1200,100 L1200,200 L0,200 Z' fill='%23ffffff'/%3E%3C/svg%3E");
       opacity: 0.3;
       animation-duration: 15s;
       animation-direction: reverse;
     }
+
     @keyframes moveWave {
       from {
         transform: translateX(0);
       }
+
       to {
         transform: translateX(-50%);
       }
     }
   </style>
 </head>
+
 <body>
   <div class="sidebar">
     <h2>Menu</h2>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
     </ul>
   </div>
   <header>
@@ -215,18 +233,6 @@
     <div class="wave wave2"></div>
   </div>
 
+  <script src="https://unpkg.com/ultraviolet-ui@3.0.0/js/uv.min.js"></script>
   <script>
-    /* Form Submission */
-    document.getElementById('botForm').onsubmit = function (event) {
-      event.preventDefault();
-      const formData = new FormData(this);
-      fetch('/start', {
-        method: 'POST',
-        body: formData,
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          document.getElementById('status').innerText = data.status;
-        })
-        .catch((error) => {
-          console.error('Error:', error);
+    // UV UI
