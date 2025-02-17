@@ -24,6 +24,7 @@ def main():
         print("This script requires Python 3 to run. Please update your Python version.")
         sys.exit()
 
+    # Create a sidebar and a game card
     sidebar = Sidebar()
     game_card = GameCard()
 
@@ -44,6 +45,7 @@ def main():
     game_card.set_title("Kahoot Flooder")
     game_card.set_description("Flood a Kahoot game with bots.")
 
+    # Add the game card to the sidebar
     sidebar.add_card(game_card)
 
     # Get the game_pin, nickname, and num_bots from the user
