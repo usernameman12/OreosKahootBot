@@ -10,10 +10,13 @@ dist
 .env
 .DS_Store
 .yarn
+.prettierignore
+.editorconfig
 local-storage/
 package.json.default
 themes/
 particles/
 sidebar/
 game-cards/
+docs/
 ```
