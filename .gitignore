@@ -2,15 +2,13 @@
 .node-gyp
 node_modules
 build
-public
-debugger/scratchpad.js
 .cache
 .package-lock.json
-.yarn
 dist
 .vscode
 .env
 .DS_Store
+.yarn
 local-storage/
 package.json.default
 themes/
