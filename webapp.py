@@ -1,21 +1,17 @@
 ```python
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 from threading import Thread
 from kahoot import flood_bots
 import requests
 import time
+import ultraviolet
 
 app = Flask(__name__)
+app.config["APPLICATION_ROOT"] = "/game_site"
+app.wsgi_app = ultraviolet.Middleware(app.wsgi_app)
 
-
-def run_kahoot_bot(game_pin, nickname, num_bots):
-    flood_bots(game_pin, nickname, num_bots)
-
-
-def ping_self():
-    while True:
-      requests.get("https://rattle-icy-limit.glitch.me/")
-      time.sleep(5)
+# Client-side credentials are stored in ultraviolet.yml
+# See https://github.com/titaniumnetwork-dev/Ultraviolet/wiki/Client-Side-Credentials
 
 # Sidebar links
 sidebar_links = [
@@ -64,7 +60,12 @@ def start():
     return jsonify({'status': 'Bots are joining!'})
 
 
-  
+def ping_self():
+    while True:
+        requests.get("https://rattle-icy-limit.glitch.me/")
+        time.sleep(5)
+
+
 if __name__ == '__main__':
     ping_thread = Thread(target=ping_self)
     ping_thread.start()
