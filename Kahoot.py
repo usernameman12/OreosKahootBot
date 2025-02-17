@@ -27,23 +27,26 @@ def main():
     sidebar = Sidebar()
     game_card = GameCard()
 
+    # Add a custom theme to the game card
     theme = Theme()
     theme.primary_color = "skyblue"
     theme.secondary_color = "white"
+    game_card.add_theme(theme)
 
+    # Add a particle effect to the game card
     particle = Particle()
     particle.type = "snow"
     particle.color = "white"
     particle.size = 10
-
-    game_card.add_theme(theme)
     game_card.add_particle(particle)
 
+    # Set the title and description of the game card
     game_card.set_title("Kahoot Flooder")
     game_card.set_description("Flood a Kahoot game with bots.")
 
     sidebar.add_card(game_card)
 
+    # Get the game_pin, nickname, and num_bots from the user
     game_pin = input("Game PIN: ")
     nickname = input("Nickname: ")
     num_bots = int(input("How many bots would you like to add?: "))
